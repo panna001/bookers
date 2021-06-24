@@ -1,6 +1,7 @@
 <div class="container">
   <div class="col-md-6 mx-auto">
     <h2>Editing Book</h2>
+    <%= render "layouts/errors", model: @book %>
     <div class="form-group">
       <%= form_with model: @book, local: true do |f| %>
         <div class="field">

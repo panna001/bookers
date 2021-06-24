@@ -1,22 +1,23 @@
 <div class="container">
   <div class="col-md-6 mx-auto">
-      <h2>User info</h2>
-      <div class="form-group">
-        <%= form_with model: @user, local: true do |f| %>
-          <div class="field">
-            <%= f.label :name, "Name" %>
-            <%= f.text_field :name, class: "form-control" %>
-          </div>
-          <div class="field">
-            <%= f.label :profile_image, "Image", class: "d-block" %>
-            <%= f.attachment_field :profile_image %>
-          </div>
-          <div class="field">
-            <%= f.label :introduction, "Introduction" %>
-            <%= f.text_area :introduction, class: "form-control" %>
-          </div>
-          <%= f.submit class: "btn btn btn-secondary" %>
-        <% end %>
-      </div>
+    <h2>User info</h2>
+    <%= render "layouts/errors", model: @user %>
+    <div class="form-group">
+      <%= form_with model: @user, local: true do |f| %>
+        <div class="field">
+          <%= f.label :name, "Name" %>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+        <div class="field">
+          <%= f.label :profile_image, "Image", class: "d-block" %>
+          <%= f.attachment_field :profile_image %>
+        </div>
+        <div class="field">
+          <%= f.label :introduction, "Introduction" %>
+          <%= f.text_area :introduction, class: "form-control" %>
+        </div>
+        <%= f.submit class: "btn btn btn-secondary" %>
+      <% end %>
     </div>
   </div>
+</div>
